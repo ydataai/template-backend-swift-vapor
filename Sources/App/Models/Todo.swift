@@ -1,18 +1,10 @@
-import Fluent
 import Vapor
 
-final class Todo: Model, Content {
-    static let schema = "todos"
-    
-    @ID(key: .id)
-    var id: UUID?
+struct Todo: Content {
+    let id: UUID
+    let title: String
 
-    @Field(key: "title")
-    var title: String
-
-    init() { }
-
-    init(id: UUID? = nil, title: String) {
+    init(id: UUID = UUID(), title: String) {
         self.id = id
         self.title = title
     }

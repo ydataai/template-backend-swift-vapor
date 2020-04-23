@@ -29,66 +29,12 @@
         }
       },
       {
-        "package": "fluent",
-        "repositoryURL": "https://github.com/vapor/fluent.git",
-        "state": {
-          "branch": null,
-          "revision": "a5916ec4ffcc1482096e91f652911fc33ba9a7fb",
-          "version": "4.0.0-rc.2.1"
-        }
-      },
-      {
-        "package": "fluent-kit",
-        "repositoryURL": "https://github.com/vapor/fluent-kit.git",
-        "state": {
-          "branch": null,
-          "revision": "85fefeeecc206ccd379e7db848dc19e37e40cb82",
-          "version": "1.0.0-rc.1.21"
-        }
-      },
-      {
-        "package": "fluent-mysql-driver",
-        "repositoryURL": "https://github.com/vapor/fluent-mysql-driver.git",
-        "state": {
-          "branch": null,
-          "revision": "2505b20d5ddaaff201838809803ff61956463824",
-          "version": "4.0.0-rc.1.1"
-        }
-      },
-      {
-        "package": "mysql-kit",
-        "repositoryURL": "https://github.com/vapor/mysql-kit.git",
-        "state": {
-          "branch": null,
-          "revision": "9b3fbb2fa0e9aff940eb729695ce562ac2b07a1d",
-          "version": "4.0.0-rc.1.4"
-        }
-      },
-      {
-        "package": "mysql-nio",
-        "repositoryURL": "https://github.com/vapor/mysql-nio.git",
-        "state": {
-          "branch": null,
-          "revision": "2cc8433a39a0d2025d7252757b56c094c837ca5f",
-          "version": "1.0.0-rc.1.2"
-        }
-      },
-      {
         "package": "routing-kit",
         "repositoryURL": "https://github.com/vapor/routing-kit.git",
         "state": {
           "branch": null,
           "revision": "e7f2d5bd36dc65a9edb303541cb678515a7fece3",
           "version": "4.1.0"
-        }
-      },
-      {
-        "package": "sql-kit",
-        "repositoryURL": "https://github.com/vapor/sql-kit.git",
-        "state": {
-          "branch": null,
-          "revision": "f777df2a355b41b382ddf912e21b07ca30b3d247",
-          "version": "3.0.0-rc.2"
         }
       },
       {
