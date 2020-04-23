@@ -11,5 +11,5 @@ func routes(_ app: Application) throws {
     }
 
     let todoController = TodoController()
-    app.register(collection: todoController)
+    try app.register(collection: todoController)
 }
