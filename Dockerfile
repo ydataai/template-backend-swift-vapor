@@ -1,18 +1,15 @@
 # ================================
-# Build image
+# Build Stage
 # ================================
-FROM vapor/swift:latest as build
+FROM vapor/swift:5.2 as build
 WORKDIR /build
 
-# First just resolve dependencies.
-# This creates a cached layer that can be reused 
-# as long as your Package.swift/Package.resolved
-# files do not change.
-COPY ./Package.* ./
-RUN swift package resolve
-
 # Copy entire repo into container
+# This copy the build folder to improve package resolve
 COPY . .
+
+# Resolve Swift dependencies
+RUN swift package resolve
 
 # Compile with optimizations
 RUN swift build \
@@ -20,18 +17,17 @@ RUN swift build \
 	-c release \
 	-Xswiftc -g
 
+
 # ================================
 # Run image
 # ================================
 FROM vapor/ubuntu:18.04
-WORKDIR /run
+WORKDIR /app
 
-# Copy build artifacts
-COPY --from=build /build/.build/release /run
-# Copy Swift runtime libraries
 COPY --from=build /usr/lib/swift/ /usr/lib/swift/
-# Uncomment the next line if you need to load resources from the `Public` directory
-#COPY --from=build /build/Public /run/Public
+
+COPY --from=build /build/.build/release /app
+COPY .env /app
 
 ENTRYPOINT ["./Run"]
 CMD ["serve", "--env", "production", "--hostname", "0.0.0.0"]
